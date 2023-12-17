@@ -1,0 +1,19 @@
+def getNode(llist, positionFromTail):
+    # Write your code here
+    curr=llist
+    if curr==None:
+        return None
+    counter1=0
+    while curr!=None:
+        curr=curr.next
+        counter1+=1
+    positionfromhead=counter1-positionFromTail
+    counter2=1
+    curr=llist
+    while counter2!=positionfromhead:
+        curr=curr.next
+        counter2+=1
+        
+    return curr.data
+
+if __name__ == '__main__':
