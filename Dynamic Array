@@ -1,0 +1,44 @@
+import math
+import os
+import random
+import re
+import sys
+# function to create dynamic array
+def dynamicArray(n, queries):
+    # Write your code here
+    arr=[[] for i in range(n)]
+    lastanswer=0
+    res=[]
+    for q in queries:
+        if q[0]==1:
+            idx=(q[1]^lastanswer)%n
+            arr[idx].append(q[2])
+        else:
+            idx=(q[1]^lastanswer)%n
+            lastanswer=arr[idx][q[2]%len(arr[idx])]
+            res.append(lastanswer)
+            
+    return res
+            
+
+            
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    q = int(first_multiple_input[1])
+
+    queries = []
+
+    for _ in range(q):
+        queries.append(list(map(int, input().rstrip().split())))
+
+    result = dynamicArray(n, queries)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
