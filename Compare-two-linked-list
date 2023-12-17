@@ -1,0 +1,15 @@
+ef compare_lists(llist1, llist2):
+    curr1=llist1
+    curr2=llist2
+    while curr1!=None and curr2!=None:
+        if curr1.data==curr2.data:
+            curr1=curr1.next
+            curr2=curr2.next
+        else:
+            return 0
+    if curr1==None and curr2==None:
+        return 1
+    else:
+        return 0
+
+if __name__ == '__main__':
