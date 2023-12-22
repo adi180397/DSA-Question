@@ -1,0 +1,17 @@
+from collections import Counter
+
+def frequency_count(arr,k):
+
+  word_frequency=Counter(arr)
+  result=[]
+  for word,frequency in word_frequency.items():
+    if frequency>=2:
+      result.append(word)
+  return result
+
+
+#driver code
+arr = ["apple", "banana", "apple", "orange", "banana", "apple"]
+k=2
+answer= frequency_count(arr,k)
+print(answer)
