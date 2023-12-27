@@ -1,4 +1,4 @@
-ef compare_lists(llist1, llist2):
+def compare_lists(llist1, llist2):
     curr1=llist1
     curr2=llist2
     while curr1!=None and curr2!=None:
