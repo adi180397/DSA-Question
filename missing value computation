@@ -1,0 +1,13 @@
+def missingNumber(self, nums: List[int]) -> int:
+        for i in range(len(nums)+1):
+            if i not in nums:
+                return i
+# this takes O(N^2) time complexity
+
+def missingnumber(nums):
+  n=len(nums)
+  Totalsum=n*(n+1)/2
+  Givensum=sum(nums)  # this takes time complexity of O(N) hence better than above code
+  missing_number=Totalsum-givensum
+  return missing_number
+  
